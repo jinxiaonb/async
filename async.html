@@ -2,6 +2,29 @@
 	<head>
 		<meta charset="utf-8">
 		<title>JavaScript异步</title>
-		<script></script>
+		<script>
+			// for(var i=0;i<5;i++){
+			// 	setTimeout(function(){
+			// 		console.log(i);
+			// 	},0);
+			// }
+			// console.log(i);
+			// 
+			//事件循环流程
+			var eventLoop = [];
+			var event;
+			var i = eventLoop.length - 1;//后进先出
+
+			while(eventLoop[i]){
+				event = eventLoop[i--];
+				if(event){//事件回调存在
+					event();
+				}
+				//否则事件消息被丢弃
+			}
+		</script>
 	</head>
+	<body>
+		
+	</body>
 </html>
